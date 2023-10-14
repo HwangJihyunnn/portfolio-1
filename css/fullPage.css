@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import url('fonts.css');
+
+
+body {color: #333; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; scroll-behavior: smooth; overflow-x: hidden; }
+#inner {max-width: 100%; height: 100vh; margin: 0 auto; }
+#wrap {position: relative; top: 0; width: 100%; height: 100vh; transition: all 0.5s;}
+
+
+/* 공통 */
+#main, #about, #profile { background: url(../img/main4.jpg)no-repeat center/cover fixed;}
+
+/* header */
+header {position: relative; display: flex; justify-content:space-between; align-items: center; font-family: 'Roboto'; color: #fff;width: 100%;  position: fixed; backdrop-filter: blur(10px);  z-index: 999; padding: 30px;height: 100px;}
+.logo {width: 200px;}
+.logo a{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.gnb {display: flex; align-items: center; justify-content: center;}
+.gnb-list {display: flex;  justify-content: flex-end;}
+.gnb-list li {border-top: 2px solid #fff; border-bottom: 2px solid rgba(255,255,255,0.5); text-align: center; position: relative;}
+.gnb-list li a{display: inline-block;  text-align: center; font-size: 22px; overflow: hidden;  padding: 10px 30px; line-height: 1.5;}
+.gnb-list li a::after {display: block; content: '';  transform: scaleX(0); transition: transform 250ms ease-in-out;position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background:#F6B820;}
+.gnb-list li a:hover::after {transform: scaleX(1); }
+/* menu List */
+.menu1, .menu2, .menu3, .menu4 {border-top: 3px solid #F6B820; margin-top: -3px;}
+
+/* main */
+#main{width: 100%; height: 100vh; font-family: 'Roboto Slab'; position: relative;}
+.main-banner {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.main-text {font-size: 80px; color: #fff; text-shadow: 2px 3px 20px #585858; font-family:'Roboto Slab';}
+#main .blink {
+  animation: blink 0.5s infinite steps(2);
+  font-size:80px;
+}
+@keyframes blink {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+/***** about Me ******/
+/* about */
+#about { width: 100%; height: 100vh; color: rgba(255, 255, 255, 0.8); font-family: 'Noto Sans KR'; text-align: center; font-weight: 500;/* background: url(../img/dark8.jpg)center/cover fixed; */}
+.about-inner {width: 100%; height: 100%; }
+.about-me {display: flex; justify-content: center; align-items: center;  width: 100%; height: 100%;}
+.about-me p {margin-bottom: 30px;font-size: 40px; line-height: 2; }
+/* .about-me span .wavy {text-decoration: underline; text-underline-offset: wavy;} */
+.about-me span{background: linear-gradient(to top, #b98800 50%, transparent 50%); font-size: 60px; text-decoration: double; }
+
+/***** main ******/
+#profile {/*  background: url(../img/dark7.jpg)center/cover fixed; */  max-width: 100%; height: 100vh; color: #000;  padding-top: 130px; }
+.profile-inner {max-width: 100%; height: 700px;margin:0 auto; display: flex; justify-content: space-around; align-items: center; position: relative; color: #000; background: rgba(255, 255, 255, 0.3);}
+#profile-left {width: 30%;margin-left: 50px; border-right:1px solid #fff;}
+#profile-right {width: 70%; display: flex; justify-content: space-around; color:#000;}
+#profile-right article {margin: 20px 0;color:#000;}
+#profile-right article>.me-detail>p {line-height: 1.7; font-weight: 700;}
+#profile-right article>.me-detail .bold {font-weight: 300; font-size: 18px;}
+#profile-right article>.me-detail .period {font-weight: 500; font-size: 22px;}
+#profile-right article h3 {position: relative; font-size: 26px; font-weight: 700; margin-bottom: 20px; color:#000}
+#profile-right article h3::before { position: absolute; top: 8px; left: -20px; content: ''; width: 5px; height: 17px;  background: #000;}
+#profile-left .my img{display: block; width: 200px; height: 100%; filter: brightness(1.1); border-radius: 50%; display: block; margin-left: 150px;  }
+#profile-left h2 {text-align: center; font-size: 24px; font-weight: 500; margin-bottom: 30px;}
+.skill {width: 500px; color: #000;}
+.skill>.tab-nav {display: flex;  width: 100%;background: #F6B820; border-radius: 20px 20px 0 0;}
+.skill>.tab-nav .active {background: #fff;}
+.tab-nav li{ padding: 10px; cursor: pointer; }
+.skill>.tab-nav li img{width: 35px;}
+.skill>.tab-nav li .active {background: #fff;border-bottom: 2px solid #333;}
+.skill .tab-contents  { width: 100%;  padding: 30px; background: rgba(255, 255, 255, 0.6); border-radius: 0 0 20px 20px; color: #000; }
+.skill .tab-contents li{display: none; text-align: center;}
+.skill .tab-contents .active{display: block;  }
+
+/***** contents ******/
+/* content */
+#contents {width: 100%; height: 100vh; display: block;}
+.package {width: 100%; height: 100vh; position: relative;background: url(../img/main4.jpg)no-repeat center/cover fixed; overflow: hidden;}
+.con {position: relative; z-index: 100;display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 100%; height: 100vh;}
+.con-inner {display: flex; justify-content: center; align-items: center; width: 100%; height: 700px; font-family: 'GmarketSans';margin: 0 auto; color: #000; 
+background: rgba(255, 255, 255, 0.4);}
+
+.package>.big1, .big2, .big3, .big4 { position: absolute; top: 0%; left: 0%;width: 0; height: 100vh;z-index: 99;transition: 1s ease-in-out;}
+.package .big1 {background: url(../img/okvalle-bg-lite.png)no-repeat center/cover fixed;}
+.package .big2 {background: url(../img/ohkitchen-bg-lite.png)no-repeat center/cover fixed;}
+.package .big3 {background: url(../img/sulwhsoo-bg.jpg)no-repeat center/cover fixed;}
+.package .big4 {background: url(../img/richmond-bg-lite.png)no-repeat center/cover fixed;}
+.package .on {width: 100%;}
+
+/* content 목업 */
+.con-img {width: 900px; height: 100%; overflow: hidden;position: relative;background: url(../img/iMac-2012-big.png)no-repeat center; background-size: 80%;}
+.con-img >p {width: 900px; height: 360px; position: absolute; top: 100px; left: 127px; overflow: hidden;}
+.con-img >p img {position: absolute; top: 0; left:0; transition: 1s ease-in-out; width: 650px; overflow-y: hidden; }
+.con-img >p::-webkit-scrollbar {width: 0; }
+.con-text {width: 700px; padding: 30px; border-radius: 50px;position: relative; font-family: "Noto Sans KR"; }
+.con-text h3 {font-size: 50px; font-weight: 700; margin-bottom: 20px; }
+.con-text h3>.under {background: linear-gradient(to top, #ffc352 50%, transparent 50%);}
+.con-text .Detail> button a{font-size: 18px;}
+.con-text .Detail> button {display: inline-block; background: none; border: 2px solid #000; width: 200px; line-height: 2.5; transition:  color 0.4s linear; overflow: hidden; position: relative; color: #000;}
+.con-text .Detail>button:hover {color: #fff;}
+.con-text .Detail>.btn::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #965000; z-index: -1; transition: transform 2s; transform-origin: 0 0 ; transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7); z-index: -1;}
+.con-text .Detail>.btn::before {transform: scaleX(0);}
+.con-text .Detail>.btn:hover::before{transform: scaleX(1);}
+.con-text .tool span {display: inline-block; background: #DDAA67; color: #333;  border-radius: 10px; padding: 5px 20px; font-size: 14px; text-align: center; margin-bottom: 30px; margin-right: 5px; }
+.con-text .page, .period, .web-size, .tablet-size, .project {font-size: 20px; font-weight:500;  }
+.con-text .project {margin-top: 50px; }
+.con-text .project {font-size: 18px; font-weight: 300;}
+
+
+
+
+/* Q & A 박스 */
+.form {display: flex; justify-content: space-between;width: 700px; height: 400px; padding: 50px;}
+.form-list { background: #fff; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; box-shadow: 2px 3px 10px; border: 1px solid #ccc; text-align: center; z-index: 999;}
+.form-list img{width: 30px; position: absolute; top: 10px; right: 10px; cursor: pointer;}
+.form-list h3 {width: 100%; height: 80px; color: #fff; background: #274DB5;}
+.form-list form, label {display: flex; flex-direction: column; justify-content:space-between; align-items: center; padding: 20px;}
+.form-list form input, textarea {width: 300px; line-height: 2; background: rgba(255, 255, 255, 0.5); text-align: left;}
+.form-list button {display: inline-block; width: 100%; height: 50px; background: #274DB5; color: #fff; border: none; color: #fff;  margin-top: 20px; text-align: center; }
+.form-list span {font-size: 14px; margin-left: 20px;}
+.QA {display: flex; justify-content: center; align-items: center; position: fixed; right: 20px; bottom: 20px; z-index: 1000; }
+.QA button {padding: 10px 40px; background:none; border: none;  margin-top: 30px; }
+.QA button img{width: 50px;}
+.QA button img{
+  font-size: 40px;
+  animation: motion 0.4s linear 0s  infinite alternate; 
+}
+@keyframes motion {
+0% {margin-top: 0px;} /* 처음 위치 */
+100% {margin-top: 10px;} /* 마지막 위치 */
+}
+
+
+/* footer */
