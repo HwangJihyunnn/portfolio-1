@@ -27,18 +27,32 @@
           <li><a href="#profile" class="menu2">Profile</a></li>
           <li>
             <a href="#contents" class="menu3">Contents</a>
-<!--             <ul class="sub">
-              <li><a href="#">오크밸리</a></li>
-              <li><a href="#">오치킨</a></li>
-              <li><a href="#">설화수</a></li>
-              <li><a href="#">평창 리치먼트</a></li>
-            </ul> -->
           </li>
           <li><a href="#card-news" class="menu4">Card & News</a></li>
         </ul>
       </div>
+      <div id="current_date">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+        <script>
+        // 원하는 로케일 설정
+        moment.locale('ko'); // 한국어
+        const formattedDate = moment().format('LL'); // 로케일화된 긴 형식으로 날짜 표시
+        document.getElementById("current_date").innerHTML = formattedDate;
+        </script>
+        <!-- Weather widget by https://meteodays.com -->
+        <a id="ms-informer-link-5abff4401843d974f336ef8314043108" class="ms-informer-link" href="https://meteodays.com/ko/weather/overview/seoul">서울날씨</a>
+        <script class="ms-informer-script" src="https://meteodays.com/ko/informer/script/5abff4401843d974f336ef8314043108"></script>
+<!-- End -->
+        </div>
     </header>
     <!-- header -->
+    <div id="all-wrap">
+      <!-- 구름 이미지 애니메이션 -->
+      <img src="img/cloud1.png" alt="" class="cloud-1">
+      <img src="img/cloud2.png" alt="" class="cloud-2">
+      <img src="img/cloud1.png" alt="" class="cloud-3">
+      <img src="img/cloud2.png" alt="" class="cloud-4">
+    </div>
     <section id="main">
       <div class="main-banner">
         <div class="main-inner">
@@ -157,7 +171,6 @@
               </div>
               <div class="Detail">
                 <button class="btn web"><a href="https://hwangjihyunnn.github.io/OKA-VALLEY/" target="_blank">페이지 이동</a></button>
-                <button class="btn web"><a href="#" target="_blank">자세히 보기</a></button>
               </div>
             </div>
             <!-- //con-text -->
@@ -210,7 +223,6 @@
               </div>
               <div class="Detail">
                 <button class="btn web"><a href="https://centert-3ae9f.web.app/" target="_blank">페이지 이동</a></button>
-                <button class="btn web"><a href="#" target="_blank">자세히 보기</a></button>
               </div>
             </div>
             <!-- //con-text -->
@@ -259,8 +271,7 @@
                 </ul>
               </div>
               <div class="Detail">
-                <button class="btn web"><a href="https://hwangjihyunnn.github.io/OKA-VALLEY/" target="_blank">페이지 이동</a></button>
-                <button class="btn web"><a href="#" target="_blank">자세히 보기</a></button>
+                <button class="btn web"><a href="https://hwangjihyunnn.github.io/Oh-KitChen/" target="_blank">페이지 이동</a></button>
               </div>
             </div>
             <!-- //con-text -->
@@ -309,8 +320,7 @@
                 </ul>
               </div>
               <div class="Detail">
-                <button class="btn web"><a href="https://hwangjihyunnn.github.io/OKA-VALLEY/" target="_blank">페이지 이동</a></button>
-                <button class="btn web"><a href="#">자세히 보기</a></button>
+                <button class="btn web"><a href=" https://hwangjihyunnn.github.io/sulwhasoo/" target="_blank">페이지 이동</a></button>
               </div>
             </div>
             <!-- //con-text -->
@@ -359,8 +369,7 @@
                 </ul>
               </div>
               <div class="Detail">
-                <button class="btn web"><a href="https://hwangjihyunnn.github.io/OKA-VALLEY/" target="_blank">페이지 이동</a></button>
-                <button class="btn web"><a href="#" target="_blank">자세히 보기</a></button>
+                <button class="btn web"><a href=" https://hwangjihyunnn.github.io/richmond/" target="_blank">페이지 이동</a></button>
               </div>
             </div>
             <!-- //con-text -->
@@ -371,40 +380,22 @@
     <!-- //contents -->
     <div id="card-news">
       <section class="card">
-        <h2>Card News</h2>
         <ul>
           <li class="on"><img src="img/photoshop/card2.png" alt="카드뉴스"></li>
           <li><img src="img/photoshop/card3.png" alt="카드뉴스"></li>
           <li><img src="img/photoshop/card4.png" alt="카드뉴스"></li>
           <li><img src="img/photoshop/card5.png" alt="카드뉴스"></li>
         </ul>
+        <ul>
+          <li><img src="img/photoshop/card6.png" alt="카드뉴스"></li>
+          <li><img src="img/photoshop/card7.png" alt="카드뉴스"></li>
+          <li><img src="img/photoshop/card8.png" alt="카드뉴스"></li>
+          <li><img src="img/photoshop/card9.png" alt="카드뉴스"></li>
+        </ul>
       </section>
-<!--       <section class="banner">
-        <h2>Banner</h2>
-      </section> -->
     </div>
     <!-- //card-news -->
-    <div id="modal">
-      <ul>
-        <li class="on">
-          <img src="img/photoshop/card2.png" alt="카드뉴스1">
-          <p class="close"><img src="img/close.png" alt="close"></p>
-        </li>
-        <li>
-          <img src="img/photoshop/card3.png" alt="카드뉴스1">
-          <p class="close"><img src="img/close.png" alt="close"></p>
-        </li>
-        <li>
-          <img src="img/photoshop/card4.png" alt="카드뉴스1">
-          <p class="close"><img src="img/close.png" alt="close"></p>
-        </li>
-        <li>
-          <img src="img/photoshop/card5.png" alt="카드뉴스1">
-          <p class="close"><img src="img/close.png" alt="close"></p>
-        </li>
-      </ul>
-    </div>
-    <!-- //card-news modal -->
+    
     <div class="QA-inner">
       <div class="QA">
         <button class="qa-btn"><img src="img/message2.png" alt="문의"></button>
@@ -429,6 +420,16 @@
       </div>
     </div>
     <!-- //QA-inner -->
+    <footer>
+      <div class="f-logo">
+        <a href="#"><img src="img/jihyun-logo.png" alt="홈화면바로가기"></a>
+      </div>
+      <div class="f-text">
+        <p class="bold">저의 포트폴리오를 시청해주셔서 감사합니다.</p>
+        <p>이 포트폴리오는 100% 저의 창작물입니다.</p>
+        <p>2023 &copy; Hwang Ji Hyun. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
   <!-- //wrap -->
 

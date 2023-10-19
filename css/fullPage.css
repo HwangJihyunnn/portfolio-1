@@ -4,12 +4,60 @@
 @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 
 body {color: #333; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; scroll-behavior: smooth; overflow-x: hidden;background: url(../img/main4.jpg)no-repeat center/cover fixed; }
-#inner {max-width: 100%; height: 100vh; margin: 0 auto; }
+#inner {max-width: 100%; height: calc(100vh - 250px); margin: 0 auto; }
 #wrap {position: relative; top: 0; width: 100%; height: 100vh; transition: all 0.5s;}
 
 
 /* 공통 */
+/* 구름애니메이션 */
+/* 속성선택자 -> 클래스명이 cloud인 요소들을 선택 */
+[class ^= "cloud"] {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  opacity: 0.7;
+}
+.cloud-1 {
+  left: -100%; 
+  animation: cloud1 100s linear infinite;  /* 이름  실행시간  가속함수 반복여부 */
+}
+.cloud-2 {
+  left: 0; 
+  animation: cloud2 80s linear infinite;  /* 이름  실행시간  가속함수 반복여부 */
+}
 
+/* 폭 1150 */
+@keyframes cloud1 {
+  to {left: 100%}
+}
+
+/* 폭 1840 */
+@keyframes cloud2 {
+  0% {left: 0;}
+  50% {left: 100%}
+  50.0001% {left: -1840px}
+  100% {left: 0}
+}
+.mobile .cloud-3 {
+  left: -100%;
+  width: 700px;
+  animation: c3 150s linear infinite;
+}
+.mobile .cloud-4 {
+  left: 0;
+  width: 1200px;
+  animation: c4 250s linear infinite;
+}
+
+@keyframes c3 {
+  to {left: 100%}
+}
+@keyframes c4 {
+  0% {left: 0}
+  50% {left: 100%}
+  50.0001% {left: -100%}
+  100% {left: 0}
+}
 
 /* main */
 #main{width: 100%; height: 100%; font-family: 'Roboto Slab'; position: relative;}
@@ -166,24 +214,12 @@ border: 1px solid #fff; border-radius: 100%; box-sizing: border-box;
 
 
 /* card-news */
-#card-news {max-width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;}
+#card-news {width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 100px;}
+.card {display: flex; flex-direction: column;}
 #card-news ul {display: flex; justify-content: space-between; width: 100%;}
-#card-news li {width: 400px; height: 400px; cursor: pointer;overflow: hidden; }
+#card-news li {width: 400px; height: 400px; cursor: pointer;overflow: hidden; margin: 10px; }
 #card-news li:hover img {transform: scale(1.1); }
 #card-news li img{width: 400px; height: 100%;transition: all 0.3s;}
-.card {width: 100%; height: 100vh;}
-/* .banner {width: 100%; height: 100vh;} */
-.card h2 {font-size: 32px; font-weight: 500; color: #fff; margin-bottom: 30px; letter-spacing: 5px;}
-
-
-#modal li {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 50px; z-index: 100; overflow: hidden;}
-#modal li img{width: 700px; position: relative;}
-#modal .close img{width: 30px; position: absolute; top: 10px; right: 10px; cursor: pointer;}
-#modal li { display: none;}
-#modal.on { display: block;}
-
-
-
 
 
 /* Q & A 박스 */
@@ -211,3 +247,9 @@ border: 1px solid #fff; border-radius: 100%; box-sizing: border-box;
 
 
 /* footer */
+footer {width: 100%; height: 300px; background: #2e2e2e; display: flex; align-items: center; font-size: 0;}
+.f-logo {width: 40%; display: flex; justify-content: center; align-items: center;}
+.f-logo img {width: 400px; filter: invert(100%);}
+.f-text {width: 60%; color: #fff;}
+.f-text .bold {font-size: 36px;}
+.f-text p{font-size: 14px; line-height: 2;}
