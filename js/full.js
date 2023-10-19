@@ -17,6 +17,16 @@ $(function(){
   setInterval(typing,300);
 })
 
+//슬라이드 메뉴
+/* $(function(){
+  $(".gnb-list>li:nth-child(2)").mouseover(function(){
+    $(".sub>li").stop().slideDown(500)
+  });
+  $(".gnb-list>li").mouseout(function(){
+    $(".sub>li").stop().slideUp(500)
+  });
+}) */
+
 /* content - 이미지 목업 */
 $(function(){
   let t =0;
@@ -40,9 +50,9 @@ $(function(){
     // console.log(WIDTH);
     // console.log(HEIGHT);
 
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 5; i++) {
       const target = `.package>.big${i}`;
-      if ((i + 2) * HEIGHT === this.window.scrollY) {
+      if ((i + 1) * HEIGHT === this.window.scrollY) {
         $(target).addClass("on");
       } else {
         $(target).removeClass("on");
@@ -62,6 +72,20 @@ $(function(){
     j = $(this).index();
     $('.tab-contents li').removeClass("active");
     $('.tab-contents li').eq(j).addClass('active');
+
+    return false;
+
+  })
+})
+$(function(){
+  let j = 0;
+  $(".tab-nav2 li").click(function(){
+    $(".tab-nav2 li").removeClass("active");
+    $(this).addClass('active');
+
+    j = $(this).index();
+    $('.tab-contents2 li').removeClass("active");
+    $('.tab-contents2 li').eq(j).addClass('active');
 
     return false;
 
@@ -90,7 +114,7 @@ $(function(){
     $(window).on("wheel", function(e) {
         if(mHtml.is(":animated")) return;
         if(e.originalEvent.deltaY > 0) {
-            if(page == 7) return;
+            if(page == 9) return;
             page++;
         } else if(e.originalEvent.deltaY < 0) {
             if(page == 1) return;
